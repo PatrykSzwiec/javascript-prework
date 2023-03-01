@@ -1,4 +1,3 @@
-printMessage("<h1>ROCK PAPER SCISSORS GAME</h1>");
 //Computer move
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log('The drawn number is : ' + randomNumber);
@@ -28,10 +27,10 @@ console.log(argPlayerMove);
 function displayResult(argComputerMove, argPlayerMove){
     console.log('wywołano displayResult');
     printMessage('<b>Computer</b> choose ' + argComputerMove + ', and <b>player</b> choose ' + argPlayerMove);
-    if( argComputerMove == 'rock' && argPlayerMove == 'paper' || argComputerMove == 'paper' && argPlayerMove == 'scissors' || argComputerMove == 'scissors' && argPlayerMove == 'rock'){
+    if((argComputerMove == 'rock' && argPlayerMove == 'paper') || (argComputerMove == 'paper' && argPlayerMove == 'scissors') || (argComputerMove == 'scissors' && argPlayerMove == 'rock')){
         printMessage('<h1>Player win this round.</h1>');
     }
-    else if( argComputerMove == 'rock' && argPlayerMove =='rock'){
+    else if((argComputerMove == 'rock' && argPlayerMove =='rock') || (argComputerMove == 'paper' && argPlayerMove =='paper') || (argComputerMove == 'scissors' && argPlayerMove =='scissors')){
         printMessage("<h1>It's a draw !</h1>");
     }
     else if(argPlayerMove == 'unknown move'){
