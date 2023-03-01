@@ -1,82 +1,44 @@
 printMessage("<h1>ROCK PAPER SCISSORS GAME</h1>");
+//Computer move
 let randomNumber = Math.floor(Math.random() * 3 + 1);
-
 console.log('The drawn number is : ' + randomNumber);
-
-let computerMove = 'unknown move';
-// COMPUTER MOVE SCRIPT ---------------------------------------------------------
-if(randomNumber == 1){
-  computerMove = 'rock';
-}
-  else if (randomNumber == 2){
-    computerMove = 'paper';
-  }
-  else if (randomNumber == 3){
-    computerMove = "scissors";
-  }
-
-console.log('Computer move is : ' + computerMove);
-printMessage('Computer move is : ' + computerMove);
-// PLAYER MOVE SCRIPT -----------------------------------------------------------
+let argComputerMove = getMoveName(randomNumber);
+//Player move
 let playerInput = prompt('Make your move ! \n 1: Rock | 2: Paper | 3: Scissors.');
+console.log('Player number is: ' + playerInput);
+let argPlayerMove = getMoveName(playerInput);
 
-console.log('Player choose : ' + playerInput);
-
-let playerMove = 'unknown move';
-
-if(playerInput == '1'){
-  playerMove = 'rock';
+function getMoveName(argMoveId){
+    if(argMoveId == 1){
+        return 'rock';
+    }
+    else if (argMoveId == 2){
+        return 'paper';
+    }
+    else if (argMoveId == 3){
+        return 'scissors';
+    }
+    else {
+        return 'unknown move';
+    }
 }
-    else if (playerInput == '2'){
-        playerMove= 'paper';
-    }
-    else if (playerInput == '3'){
-        playerMove= 'scissors';
-    }
-console.log('Player move is : ' + playerMove);
-printMessage('Player move is : ' + playerMove);
-// SETTLEMENT OF THE RESULT
-// computerMove is rock
-if ( computerMove == 'rock' && playerMove == 'paper'){
-    console.log('Player win this round.');
+console.log(argComputerMove);
+console.log(argPlayerMove);
+
+function displayResult(argComputerMove, argPlayerMove){
+    console.log('wywołano displayResult');
+    printMessage('<b>Computer</b> choose ' + argComputerMove + ', and <b>player</b> choose ' + argPlayerMove);
+  if( argComputerMove == 'rock' && argPlayerMove == 'paper' || argComputerMove == 'paper' && argPlayerMove == 'scissors' || argComputerMove == 'scissors' && argPlayerMove == 'rock'){
     printMessage('<h1>Player win this round.</h1>');
+  }
+  else if( argComputerMove == 'rock' && argPlayerMove =='rock'){
+    printMessage("<h1>It's a draw !</h1>");
+  }
+  else if(argPlayerMove == 'unknown move'){
+    printMessage('<h1>Unknown player move</h1>');
+  }
+  else {
+    printMessage('<h1>Computer win this round.</h1>');
+  }
 }
-    else if ( computerMove == 'rock' && playerMove == 'rock'){
-        console.log('Its a draw!');
-        printMessage('<h1>Its a draw!</h1>');
-    } 
-    else if ( computerMove == 'rock' && playerMove == 'scissors'){
-        console.log('Computer win this round.');
-        printMessage('<h1>Computer win this round.</h1>');
-    }
-// computerMove is paper
-    else if ( computerMove == 'paper' && playerMove == 'paper'){
-        console.log('Its a draw!');
-        printMessage('<h1>Its a draw!</h1>');
-    }
-    else if ( computerMove == 'paper' && playerMove == 'rock'){
-        console.log('Computer win this round.');
-        printMessage('<h1>Computer win this round.</h1>');
-    } 
-    else if ( computerMove == 'paper' && playerMove == 'scissors'){
-        console.log('Player win this round.');
-        printMessage('<h1>Player win round.</h1>');
-    }
-// computerMove is scissors
-    else if ( computerMove == 'scissors' && playerMove == 'paper'){
-        console.log('Computer win this round.');
-        printMessage('<h1>Computer win this round.</h1>');
-    }
-    else if ( computerMove == 'scissors' && playerMove == 'rock'){
-        console.log('Player win this round.');
-        printMessage('<h1>Player win this round.</h1>');
-    } 
-    else if ( computerMove == 'scissors' && playerMove == 'scissors'){
-        console.log('Its a draw!');
-        printMessage('<h1>Its a draw!</h1>');
-    }
-// playerMove is unknown move
-    else if (computerMove == 'rock' || computerMove == 'paper' || computerMove == 'scissors' && playerMove == 'unknown move'){
-        console.log("Player move isn't correct !!!");
-        printMessage("<h1>Player move isn't correct !!!</h1>");
-    }
+displayResult(argComputerMove, argPlayerMove);
