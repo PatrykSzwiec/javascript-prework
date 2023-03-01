@@ -1,44 +1,60 @@
+var playerScore = 0 ;
+var computerScore  = 0;
+function getMoveName(argMoveId){
+    if(argMoveId == 1){
+        return 'rock';
+    }
+    else if (argMoveId == 2){
+        return 'paper';
+    }
+    else if (argMoveId == 3){
+        return 'scissors';
+    }
+    else {
+        return 'unknown move';
+    }
+}
+// Function to get moves
 function playGame(argX){
     clearMessages();
     let playerInput = argX;
     let randomNumber = Math.floor(Math.random() * 3 + 1);
-    console.log('The drawn number is : ' + randomNumber);
     let argComputerMove = getMoveName(randomNumber);
     let argPlayerMove = getMoveName(playerInput);
-    function getMoveName(argMoveId){
-        if(argMoveId == 1){
-            return 'rock';
-        }
-        else if (argMoveId == 2){
-            return 'paper';
-        }
-        else if (argMoveId == 3){
-            return 'scissors';
-        }
-        else {
-            return 'unknown move';
-        }
-    }
-    console.log(argComputerMove);
-    console.log(argPlayerMove);
-    function displayResult(argComputerMove, argPlayerMove){
-        console.log('wywołano displayResult');
-        printMessage('<b>Computer</b> choose ' + argComputerMove + ', and <b>player</b> choose ' + argPlayerMove);
-        if((argComputerMove == 'rock' && argPlayerMove == 'paper') || (argComputerMove == 'paper' && argPlayerMove == 'scissors') || (argComputerMove == 'scissors' && argPlayerMove == 'rock')){
-            printMessage('<h1>Player win this round.</h1>');
-        }
-        else if((argComputerMove == 'rock' && argPlayerMove =='rock') || (argComputerMove == 'paper' && argPlayerMove =='paper') || (argComputerMove == 'scissors' && argPlayerMove =='scissors')){
-            printMessage("<h1>It's a draw !</h1>");
-        }
-        else if(argPlayerMove == 'unknown move'){
-            printMessage('<h1>Unknown player move</h1>');
-        }
-        else {
-            printMessage('<h1>Computer win this round.</h1>');
-        }
-    }
+    console.log('computer : ' + argComputerMove);
+    console.log('player : ' +argPlayerMove);
     displayResult(argComputerMove, argPlayerMove);
 }
+// Function to compare outputs
+function displayResult(argComputerMove, argPlayerMove){
+    document.getElementById('pc').innerHTML = "You : "  + argPlayerMove;
+    document.getElementById('ch').innerHTML = "Computer : "  + argComputerMove;
+    if((argComputerMove == 'rock' && argPlayerMove == 'paper') || (argComputerMove == 'paper' && argPlayerMove == 'scissors') || (argComputerMove == 'scissors' && argPlayerMove == 'rock')){
+        playerScore = playerScore + 1;
+        document.getElementById('result').innerHTML = "Winner: <br> You win this round.";
+    }
+    else if((argComputerMove == 'rock' && argPlayerMove =='rock') || (argComputerMove == 'paper' && argPlayerMove =='paper') || (argComputerMove == 'scissors' && argPlayerMove =='scissors')){
+        document.getElementById('result').innerHTML = "Winner: <br> It's a draw !";
+     }
+    else if(argPlayerMove == 'unknown move'){
+        printMessage('<h1>Unknown player move</h1>');
+    }
+    else {
+        computerScore = computerScore + 1;
+        document.getElementById('result').innerHTML = "Winner: <br> Computer win this round.";
+    }
+    document.getElementById('player-score').innerHTML = "You : "  + playerScore;
+    document.getElementById('computer-score').innerHTML = "Computer : "  + computerScore;
+}
+// FUNCTION TO RESET SCORE
+function rest(){
+    clearMessages();
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementById('player-score').innerHTML = "You : "  + playerScore;
+    document.getElementById('computer-score').innerHTML = "Computer : "  + computerScore;
+}
+// END OF FUNCTION
 document.getElementById('play-rock').addEventListener('click', function(){
     playGame(1);
 });

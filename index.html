@@ -2,18 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Kamień, papier, nożyce</title>
+	<title>Rock Paper Scissors</title>
 	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
 </head>
 <body>
 	<div class="container">
         <h1>ROCK PAPER SCISSORS GAME</h1>
+        <h3>Instruction</h3>
+        <h4>Rock beats scissors, scissors beats paper, and paper beats rock.</h4>
 		<div id="buttons">
-            <button id="play-rock">Rock</button>
-            <button id="play-paper">Paper</button>
-            <button id="play-scissors">Scissors</button>
+            <button class="btn" id="play-rock"><i class="fa-solid fa-hand-back-fist"></i></button>
+            <button class="btn" id="play-paper"><i class="fa-solid fa-hand"></i></button>
+            <button class="btn" id="play-scissors"><i class="fa-solid fa-hand-scissors"></i></button>
         </div>
 		<div id="messages"></div>
+            <p id="pc">You :</p> |
+            <p id="ch">Computer :</p><br>
+            <p id="result">Winner: <br></p>
+        <div id="scoreboard">
+            <h2>Score Board</h2>
+            <p id="player-score">You : 0</p> | <p id="computer-score">Computer : 0</p><br>
+            <button onclick="rest()">Reset</button>
+        </div>
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>

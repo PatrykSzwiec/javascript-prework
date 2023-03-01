@@ -1,0 +1,48 @@
+.btn {
+    font-size: 30px;
+    width: 100px;
+    height: 100px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+.btn:hover {
+    color: red;
+}
+body {
+    background: grey;
+    text-align: center;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    h1 {
+        font-size: 60px;
+    }
+    p {
+        display: inline-block;
+    }
+}
+#pc {
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+    -webkit-text-stroke: 1px black;
+}
+#ch {
+    font-size: 20px;
+    font-weight: bold;
+    -webkit-text-stroke: 1px black;
+    color: red;
+}
+#result {
+    font-size: 26px;
+    line-height: 20px;
+    font-weight: bold;
+}
