@@ -28,17 +28,17 @@ console.log(argPlayerMove);
 function displayResult(argComputerMove, argPlayerMove){
     console.log('wywołano displayResult');
     printMessage('<b>Computer</b> choose ' + argComputerMove + ', and <b>player</b> choose ' + argPlayerMove);
-  if( argComputerMove == 'rock' && argPlayerMove == 'paper' || argComputerMove == 'paper' && argPlayerMove == 'scissors' || argComputerMove == 'scissors' && argPlayerMove == 'rock'){
-    printMessage('<h1>Player win this round.</h1>');
-  }
-  else if( argComputerMove == 'rock' && argPlayerMove =='rock'){
-    printMessage("<h1>It's a draw !</h1>");
-  }
-  else if(argPlayerMove == 'unknown move'){
-    printMessage('<h1>Unknown player move</h1>');
-  }
-  else {
-    printMessage('<h1>Computer win this round.</h1>');
-  }
+    if( argComputerMove == 'rock' && argPlayerMove == 'paper' || argComputerMove == 'paper' && argPlayerMove == 'scissors' || argComputerMove == 'scissors' && argPlayerMove == 'rock'){
+        printMessage('<h1>Player win this round.</h1>');
+    }
+    else if( argComputerMove == 'rock' && argPlayerMove =='rock'){
+        printMessage("<h1>It's a draw !</h1>");
+    }
+    else if(argPlayerMove == 'unknown move'){
+        printMessage('<h1>Unknown player move</h1>');
+    }
+    else {
+        printMessage('<h1>Computer win this round.</h1>');
+    }
 }
 displayResult(argComputerMove, argPlayerMove);
