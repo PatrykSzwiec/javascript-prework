@@ -64,3 +64,14 @@ document.getElementById('play-paper').addEventListener('click', function(){
 document.getElementById('play-scissors').addEventListener('click', function(){
     playGame(3);
 });
+// TEST AREA //
+function rand50() {
+    return Math.floor(Math.random() * 10) & 1;
+}
+function rand75() {
+    return rand50() | rand50();
+}
+for (let i = 0; i < 10; i++)
+    document.write(rand75());
+    /////////////////////////////////////
+ 
