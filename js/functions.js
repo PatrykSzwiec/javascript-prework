@@ -8,5 +8,5 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 	document.getElementById('pc').innerHTML = 'None';
 	document.getElementById('ch').innerHTML = 'None';
-	document.getElementById('result').innerHTML = ".";
+	document.getElementById('result').innerHTML = '';
 }
