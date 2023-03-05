@@ -6,7 +6,7 @@ function printMessage(msg){
 
 function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
-	document.getElementById('pc').innerHTML = 'You : ';
-	document.getElementById('ch').innerHTML = "Computer : ";
-	document.getElementById('result').innerHTML = "Winner: <br>";
+	document.getElementById('pc').innerHTML = 'None';
+	document.getElementById('ch').innerHTML = 'None';
+	document.getElementById('result').innerHTML = ".";
 }

@@ -20,6 +20,7 @@ body {
     text-align: center;
 }
 .container {
+    max-width:100%;
     width: 100%;
     height: 100vh;
     h1 {
@@ -43,6 +44,5 @@ body {
 }
 #result {
     font-size: 26px;
-    line-height: 20px;
     font-weight: bold;
 }
