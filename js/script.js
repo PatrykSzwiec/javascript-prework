@@ -1,6 +1,4 @@
-let playerScore = 0 ;
-let computerScore  = 0;
-function getMoveName(argMoveId){
+{const getMoveName = function(argMoveId){
     if(argMoveId == 1){
         return 'rock';
     }
@@ -15,12 +13,12 @@ function getMoveName(argMoveId){
     }
 }
 // Function to get moves
-function playGame(playerInput){
+const playGame = function(playerInput){
     clearMessages();
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
+    const argProbability = Math.floor(Math.random()*100+1);
     let argComputerMove = getMoveName(randomNumber);
     let argPlayerMove = getMoveName(playerInput);
-    let argProbability = Math.floor(Math.random()*100+1);
     //CONSOLE LOG BEFORE PROBABILITY CHANGES
     console.log('computer : ' + argComputerMove);
     console.log('player : ' +argPlayerMove);
@@ -45,7 +43,9 @@ function playGame(playerInput){
     displayResult(argComputerMove, argPlayerMove);
 }
 // Function to compare outputs
-function displayResult(argComputerMove, argPlayerMove){
+let playerScore = 0;
+let computerScore  = 0;
+const displayResult = function(argComputerMove, argPlayerMove){
     document.getElementById('pc').innerHTML = argPlayerMove;
     document.getElementById('ch').innerHTML = argComputerMove;
     if((argComputerMove == 'rock' && argPlayerMove == 'paper') || (argComputerMove == 'paper' && argPlayerMove == 'scissors') || (argComputerMove == 'scissors' && argPlayerMove == 'rock')){
@@ -66,7 +66,7 @@ function displayResult(argComputerMove, argPlayerMove){
     document.getElementById('computer-score').innerHTML = computerScore;
 }
 // FUNCTION TO RESET SCORE
-function rest(){
+const rest = function(){
     clearMessages();
     playerScore = 0;
     computerScore = 0;
@@ -83,8 +83,4 @@ document.getElementById('play-paper').addEventListener('click', function(){
 document.getElementById('play-scissors').addEventListener('click', function(){
     playGame(3);
 });
-
-
-
-
-
+}
