@@ -19,7 +19,7 @@
         const randomNumber = Math.floor(Math.random() * 3 + 1);
         const argProbability = Math.floor(Math.random()*100+1);
         let argComputerMove = getMoveName(randomNumber);
-        let argPlayerMove = getMoveName(playerInput);
+        const argPlayerMove = getMoveName(playerInput);
         //CONSOLE LOG BEFORE PROBABILITY CHANGES
         console.log('computer : ' + argComputerMove);
         console.log('player : ' +argPlayerMove);
